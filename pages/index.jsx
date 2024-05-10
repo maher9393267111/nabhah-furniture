@@ -23,8 +23,8 @@ export default function Index({}) {
   const router = useRouter();
   const { t } = useTranslation("common");
   const direction = router.locale === "ar" && "rtl";
-  const lang = router.locale
-  const {pageLoading ,setPageLoading} = useAuth()
+  const lang = router.locale;
+  const { pageLoading, setPageLoading } = useAuth();
 
   const newproductstitle =
     router.locale === "ar"
@@ -49,16 +49,13 @@ export default function Index({}) {
   const [news, setNews] = useState([]);
   const [sliders, setSliders] = useState([]);
 
-const [homesection ,setHomeSection] = useState({})
-
+  const [homesection, setHomeSection] = useState({});
 
   // const [loacding, setLoading] = useState(true);
   //subcategory"
   useEffect(() => {
-
-
     const getProducts = async () => {
-        setPageLoading(true)
+      setPageLoading(true);
 
       const data = await getDocumentsOrder(
         "products",
@@ -68,7 +65,7 @@ const [homesection ,setHomeSection] = useState({})
 
       console.log(data, "fetch PRODUCCCCCCCCCCCC====>>>>");
       setProducts(data);
-       setPageLoading(false)
+      setPageLoading(false);
     };
 
     const getOffers = async () => {
@@ -100,35 +97,29 @@ const [homesection ,setHomeSection] = useState({})
       setNews(data);
     };
 
- 
-
     const getInfo = async () => {
       // setLoading(true);
-     
+
       const data = await getDocumentsOrder(
         "homesection",
         orderBy("timeStamp", "asc")
       );
-  
+
       console.log(data, "fetch productIIUW!@__@#(@)#(s ====>>>>");
       setHomeSection(data[0]);
-     
+
       //  setLoading(false);
     };
     getInfo();
-  
 
-
-
-
-
-
-  
     getFeatures();
 
     getProducts();
     getOffers();
   }, []);
+
+
+  
 
   return (
     <Layout dir={router.locale === "ar" ? "rtl" : "ltr"}>
@@ -144,7 +135,7 @@ const [homesection ,setHomeSection] = useState({})
         )} */}
 
         <div dir="ltr">
-          <Hero lang={lang} data={homesection} direction={direction}  />
+          <Hero lang={lang} data={homesection} direction={direction} />
         </div>
 
         <div>
