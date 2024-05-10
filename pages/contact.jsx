@@ -102,10 +102,10 @@ const router =useRouter()
       />
       <div className="mx-auto arabic max-w-7xl px-6 py-8  sm:px-6 md:py-16 lg:px-8">
         <section dir={router?.locale === 'ar' && 'rtl'}>
-          <h1 className="text-4xl arabic font-bold tracking-tight shimmer sm:text-5xl md:text-6xl">
+          <h1 className="text-4xl mr-6 arabic font-bold tracking-tight shimmer sm:text-5xl md:text-6xl">
           {t("contactus")}
           </h1>
-          <p className="my-4 text-lg duration-200 hover:shimmer md:justify-start">
+          <p className="my-4 text-lg mr-6 duration-200 hover:shimmer md:justify-start">
             <a
               target={"_blank"}
               rel="noopener noreferrer"
@@ -201,7 +201,7 @@ const router =useRouter()
                   <div className="mt-4">
                     <button
                       type="submit"
-                      className="inline-flex w-full items-center justify-center rounded-lg bg-rose-600 px-5 py-3 text-white sm:w-auto"
+                      className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-5 py-3 text-black sm:w-auto"
                     >
                       <span className="font-medium"> {t("send")} </span>
                       <svg
