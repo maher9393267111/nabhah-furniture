@@ -20,6 +20,7 @@ import { orderBy } from "firebase/firestore";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -314,7 +315,7 @@ TEDILI MERMER
                               href={`/products?category=${item?.title}`}
                               className="block arabic px-4 py-2 hover:bg-primary "
                             >
-                              {item?.title}
+                              {locale === 'ar' ? item?.titlear  : lang === 'en' ? item?.title    : item?.titletr}
                             </Link>
                           </li>
                         );
