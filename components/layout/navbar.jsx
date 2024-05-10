@@ -198,8 +198,8 @@ const Navbar = () => {
             className=" object-cover    rounded-md"
             src={'/logo.jpg'}
             // src="https://ik.imagekit.io/m1akscp5q/logo%20bac%20horizontal%20hitam%201.png?updatedAt=1705581337965"
-              width={64}
-              height={64}
+              width={52}
+              height={52}
               alt="logo bac"
             />
 
