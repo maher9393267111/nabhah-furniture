@@ -87,7 +87,7 @@ useEffect(() => {
             <Image
               className="absolute rounded-md"
               src={
-                "/about.jpg"
+                contactinfo?.image
               }
               alt="Hakkımızda"
               layout="fill"
