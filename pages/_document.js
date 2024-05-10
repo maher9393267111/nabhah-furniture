@@ -8,10 +8,10 @@ export default class MyDocument extends Document {
         <Head>
         <title>
             
-        Tedili Mermer
+    Nabhan Mobilya
             
             </title>
-          <link rel="icon" href="/logo.png" />
+          <link rel="icon" href="/logo.jpg" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

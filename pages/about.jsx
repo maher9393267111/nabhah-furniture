@@ -33,11 +33,11 @@ function Hakkimizda() {
   }, []);
 
 
-  
+
   return (
     <Layout>
       <>
-        <NextSeo title="Tedili  | Hakkımızda | Tedili Mermer" />
+        <NextSeo title="Nabhan | Hakkımızda | Nabhan Mobilya" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-5 py-8 md:grid-cols-2 md:py-16">
             <section className="grid gap-4 arabic">

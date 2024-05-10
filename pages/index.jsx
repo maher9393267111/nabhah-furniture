@@ -119,11 +119,11 @@ export default function Index({}) {
   }, []);
 
 
-  
+
 
   return (
     <Layout dir={router.locale === "ar" ? "rtl" : "ltr"}>
-      <NextSeo title="Tedili  | Hakkımızda | Tedili Mermer" />
+      <NextSeo title="Nabhan | Nabhan Furniture | Nabhan Mobilya" />
 
       <div className="scroll-smooth mb-16  ">
         {/* {sliders && sliders?.length > 0 && <BannerSlider data={sliders} />}

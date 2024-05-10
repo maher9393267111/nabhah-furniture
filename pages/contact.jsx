@@ -97,7 +97,7 @@ const router =useRouter()
     
     <>
       <NextSeo
-        title="Tedili Mermer | Tedili | Tedili | Tedili Mermer"
+        title="Nabhan | Nabhan Furniture | Nabhan Mobilya"
         description="Tedili Mermer"
       />
       <div className="mx-auto arabic max-w-7xl px-6 py-8  sm:px-6 md:py-16 lg:px-8">
