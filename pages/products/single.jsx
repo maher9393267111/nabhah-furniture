@@ -134,7 +134,7 @@ if (!product ){
   <div className="inline-flex rounded-md shadow">
  
       <a
-      href="https://wtspee.com/905379732131" target="_blank"
+      href="https://wtspee.com/905522982310" target="_blank"
       className="inline-flex arabic items-center justify-center rounded-md border border-transparent bg-primary px-5 py-3 text-base font-medium text-black ">
       {t('whatsapptitle')}
       </a>

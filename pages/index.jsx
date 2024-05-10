@@ -22,6 +22,7 @@ export default function Index({}) {
   const router = useRouter();
   const { t } = useTranslation("common");
   const direction = router.locale === "ar" && "rtl";
+  const lang = router.locale
 
   const newproductstitle =
     router.locale === "ar"
@@ -45,22 +46,14 @@ export default function Index({}) {
   const [offers, setOffers] = useState([]);
   const [news, setNews] = useState([]);
   const [sliders, setSliders] = useState([]);
+
+const [homesection ,setHomeSection] = useState({})
+
+
   // const [loacding, setLoading] = useState(true);
   //subcategory"
   useEffect(() => {
-    const getCats = async () => {
-      //  setPageLoading(true)
 
-      const data = await getDocumentsOrder(
-        "cats",
-        orderBy("timeStamp", "asc"),
-        null
-      );
-
-      console.log(data, "fetch cats ====>>>>");
-      setCats(data);
-      // setPageLoading(false)
-    };
 
     const getProducts = async () => {
       //  setPageLoading(true)
@@ -105,24 +98,32 @@ export default function Index({}) {
       setNews(data);
     };
 
-    const getSliders = async () => {
-      //  setPageLoading(true)
+ 
 
+    const getInfo = async () => {
+      // setLoading(true);
+     
       const data = await getDocumentsOrder(
-        "slider",
-        orderBy("timeStamp", "asc"),
-        null
+        "homesection",
+        orderBy("timeStamp", "asc")
       );
-
-      console.log(data, "fetch cats ====>>>>");
-      setSliders(data);
-      // setPageLoading(false)
+  
+      console.log(data, "fetch productIIUW!@__@#(@)#(s ====>>>>");
+      setHomeSection(data[0]);
+     
+      //  setLoading(false);
     };
+    getInfo();
+  
 
-    getSliders();
+
+
+
+
+
+  
     getFeatures();
 
-    getCats();
     getProducts();
     getOffers();
   }, []);
@@ -141,7 +142,7 @@ export default function Index({}) {
         )} */}
 
         <div dir="ltr">
-          <Hero direction={direction} />
+          <Hero lang={lang} data={homesection} direction={direction}  />
         </div>
 
         <div>

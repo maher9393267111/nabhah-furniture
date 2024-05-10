@@ -19,22 +19,22 @@ const [contactinfo, setContactInfo] = useState([]);
 useEffect(() => {
 
  
-
   const getInfo = async () => {
-    //  setPageLoading(true)
-
+    // setLoading(true);
+   
     const data = await getDocumentsOrder(
-      "slider",
-      orderBy("timeStamp", "asc"),
-      null
+      "aboutsection",
+      orderBy("timeStamp", "asc")
     );
 
-    console.log(data, "fetch contactInfo ====>>>>");
-    setContactInfo(data);
-    // setPageLoading(false)
+    console.log(data, "fetch productIIUW!@__@#(@)#(s ====>>>>");
+    setContactInfo(data[0]);
+   
+    //  setLoading(false);
   };
-
   getInfo();
+
+
 
 }, []);
 
@@ -66,7 +66,7 @@ useEffect(() => {
             
 <div className="mt-6 text-xl" dir={router?.locale === 'ar' && 'rtl'} > 
   
-  { router?.locale === 'ar' ?  contactinfo[0]?.titlear : router.locale === 'en' ? contactinfo[0]?.title : contactinfo[0]?.titletr} 
+  { router?.locale === 'ar' ?  contactinfo?.titlear : router.locale === 'en' ? contactinfo?.title : contactinfo?.titletr} 
   </div>
 
 </div>

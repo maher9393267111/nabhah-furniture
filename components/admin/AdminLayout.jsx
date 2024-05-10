@@ -25,8 +25,8 @@ const AdminLayout = ({ children }) => {
     // { id: 6, text: "All SubCategories", path: "/admin/subcategory/all" },
     // { id: 7, text: "Add Article", path: "/admin/article/add" },
     // { id: 8, text: "All Articles", path: "/admin/article/all" },
-    { id: 9, text: "Add About", path: "/admin/slider/add" },
-    { id: 10, text: "Abouts", path: "/admin/slider/all" },
+    { id: 9, text: "AboutSection", path: "/admin/aboutSection" },
+    { id: 10, text: "HomeSection", path: "/admin/homeSetion" },
     // { id: 11, text: "Add Gallery", path: "/admin/gallery/add" },
     // { id: 12, text: "All Galleries", path: "/admin/gallery/all" },
 
