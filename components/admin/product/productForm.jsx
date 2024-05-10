@@ -121,9 +121,10 @@ const ProductForm = ({
                 })}
               </Select>
             </Form.Item>
-
+sas
             {/* -----subcategory--- */}
-            <Form.Item name="subcategory" label="subcategory">
+
+            {/* <Form.Item name="subcategory" label="subcategory">
               <Select placeholder="Select SubCategory">
                 {subcats?.filter(
     (subcategory) => subcategory.category === selectedCategory
@@ -135,7 +136,9 @@ const ProductForm = ({
                   );
                 })}
               </Select>
-            </Form.Item>
+            </Form.Item> */}
+
+            
 
             <div className=" flex  md:col-span-2 gap-2 items-center justify-center md:justify-start">
               {/* ----Price--- */}

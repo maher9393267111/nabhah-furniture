@@ -203,7 +203,7 @@ const Navbar = () => {
 
           <div className=" arabic shimmer text-2xl ">
 
-TEDILI MERMER
+NABHAN FURNITURE
 </div>
 
 
@@ -327,7 +327,7 @@ TEDILI MERMER
                   {t("navbar.about")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   onClick={closeAllMenus}
                   href="/gallery"
@@ -335,7 +335,7 @@ TEDILI MERMER
                 >
                   {t("navbar.gallery")}
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link

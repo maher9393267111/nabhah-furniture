@@ -10,6 +10,9 @@ import BannerSlider from "@/components/Main/BannerSlider";
 import CategoryCard from "@/components/Main/CategoryCard";
 import ProductSlider from "@/components/Main/productsSlider";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
+import Hero from "@/components/layout/Hero";
+import ProductCard from "@/components/Main/productCard";
 // import Service from "@/components/Main/Services";
 // import SectionOne from "@/components/Main/SectionOne";
 // import Travels from "@/components/Main/Travels";
@@ -131,25 +134,48 @@ export default function Index({}) {
 
 
       <div className="scroll-smooth mb-16  ">
-        {sliders && sliders?.length > 0 && <BannerSlider data={sliders} />}
+        {/* {sliders && sliders?.length > 0 && <BannerSlider data={sliders} />}
 
         {cats && cats?.length > 0 && (
           <div className=" mx-4 mt-12 md:mx-8">
             <CategoryCard title={t("sectionstitle")} data={cats} />
           </div>
-        )}
+        )} */}
+
+
+
+<Hero/>
+
+
 
         <div>
 
+{/* -----ALL PRODUCTS CONTAINER------ */}
+        <div className="py-16 sm:py-24">
+        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+        {products?.map((product, index) => {
+                return <ProductCard {...product} key={product?.id} />;
+              })}
+          </div>
       
+</div>
 
+
+
+
+
+      
+{/* 
         {offers && offers?.length > 0 && (
           <ProductSlider title={discounttitle} data={offers} />
         )}
 
         {news && news?.length > 0 && (
           <ProductSlider title={newproductstitle} data={news} />
-        )}
+        )} */}
+
+
+
 
 </div>
 

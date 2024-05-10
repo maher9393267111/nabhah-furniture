@@ -21,14 +21,14 @@ const AdminLayout = ({ children }) => {
     { id: 2, text: "All Categories", path: "/admin/category/all" },
     { id: 3, text: "Add Product", path: "/admin/product/add" },
     { id: 4, text: "All Products", path: "/admin/product/all" },
-    { id: 5, text: "Add SubCategory", path: "/admin/subcategory/add" },
-    { id: 6, text: "All SubCategories", path: "/admin/subcategory/all" },
+    // { id: 5, text: "Add SubCategory", path: "/admin/subcategory/add" },
+    // { id: 6, text: "All SubCategories", path: "/admin/subcategory/all" },
     // { id: 7, text: "Add Article", path: "/admin/article/add" },
     // { id: 8, text: "All Articles", path: "/admin/article/all" },
-    { id: 9, text: "Add Sliders", path: "/admin/slider/add" },
-    { id: 10, text: "All Sliders", path: "/admin/slider/all" },
-    { id: 11, text: "Add Gallery", path: "/admin/gallery/add" },
-    { id: 12, text: "All Galleries", path: "/admin/gallery/all" },
+    { id: 9, text: "Add About", path: "/admin/slider/add" },
+    { id: 10, text: "Abouts", path: "/admin/slider/all" },
+    // { id: 11, text: "Add Gallery", path: "/admin/gallery/add" },
+    // { id: 12, text: "All Galleries", path: "/admin/gallery/all" },
 
   ];
 
