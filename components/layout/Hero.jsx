@@ -7,7 +7,7 @@ function Hero({data ,direction ,lang}) {
     <div>
       <main className="grid grid-cols-1 items-center gap-y-4 py-8 lg:grid-cols-2 lg:py-0">
         <div   className="md:text-center lg:text-left">
-          <h1 className="flex justify-center flex-col text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+          <h1 dir={direction}  className="flex justify-center flex-col text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
             <span className="block xl:inline shimmer ">Nabhan Mobilya</span>{" "}
             {/* <span className="block text-primary xl:inline">
               Ay Karanlığından Gelen Güzellik
