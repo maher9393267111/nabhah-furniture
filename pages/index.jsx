@@ -13,6 +13,7 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Hero from "@/components/layout/Hero";
 import ProductCard from "@/components/Main/productCard";
+import { useAuth } from "@/functions/context";
 // import Service from "@/components/Main/Services";
 // import SectionOne from "@/components/Main/SectionOne";
 // import Travels from "@/components/Main/Travels";
@@ -23,6 +24,7 @@ export default function Index({}) {
   const { t } = useTranslation("common");
   const direction = router.locale === "ar" && "rtl";
   const lang = router.locale
+  const {pageLoading ,setPageLoading} = useAuth()
 
   const newproductstitle =
     router.locale === "ar"
@@ -56,7 +58,7 @@ const [homesection ,setHomeSection] = useState({})
 
 
     const getProducts = async () => {
-      //  setPageLoading(true)
+        setPageLoading(true)
 
       const data = await getDocumentsOrder(
         "products",
@@ -66,7 +68,7 @@ const [homesection ,setHomeSection] = useState({})
 
       console.log(data, "fetch PRODUCCCCCCCCCCCC====>>>>");
       setProducts(data);
-      // setPageLoading(false)
+       setPageLoading(false)
     };
 
     const getOffers = async () => {
