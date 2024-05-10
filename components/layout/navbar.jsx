@@ -130,16 +130,22 @@ const Navbar = () => {
           <div className="flex flex-row space-x-2">
             <FaMapMarkerAlt className="w-5 h-5 text-gray-500" />
             <p className="arabic"> 
-               {locale === 'ar' ? 'تركيا-افيون' : 'TÜRKİYE-AFYONKARAHİSAR'}
+            Zafer, Küplüpınar Cd. No:36, 16580 Gürsu/Bursa
                </p>
           </div>
           <div className="flex flex-row space-x-2">
             <FaMobileAlt className="w-5 h-5 text-gray-500" />
-            <p>00905379732131</p>
+            <p>00905522982310</p>
           </div>
+
+          <div className="flex flex-row space-x-2">
+            <FaMobileAlt className="w-5 h-5 text-gray-500" />
+            <p>00905395894257</p>
+          </div>
+
           <div className="flex flex-row space-x-2">
             <FaRegClock className="w-5 h-5 arabic text-gray-500" />
-            <p className="arabic"> Cumartesi-Perşembe
+            <p className="arabic"> Pazartesi-Cumartesi
              08:00 - 6:00</p>
           </div>
         </div>
@@ -188,11 +194,11 @@ const Navbar = () => {
 
           <Link className="flex flex-row shimmer !shadow-2xl" href="/">
             <Image
-            className=" object-cover"
-            src={'/logo.png'}
+            className=" object-cover    rounded-md"
+            src={'/logo.jpg'}
             // src="https://ik.imagekit.io/m1akscp5q/logo%20bac%20horizontal%20hitam%201.png?updatedAt=1705581337965"
-              width={80}
-              height={80}
+              width={64}
+              height={64}
               alt="logo bac"
             />
 
@@ -201,10 +207,10 @@ const Navbar = () => {
 
 
 
-          <div className=" arabic shimmer text-2xl ">
+          {/* <div className=" arabic shimmer text-2xl ">
 
 NABHAN FURNITURE
-</div>
+</div> */}
 
 
 </div>

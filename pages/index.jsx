@@ -19,9 +19,9 @@ import ProductCard from "@/components/Main/productCard";
 // import AbourSection from "@/components/Main/AboutUsSection";
 
 export default function Index({}) {
-  const { t } = useTranslation("common");
-
   const router = useRouter();
+  const { t } = useTranslation("common");
+  const direction = router.locale === "ar" && "rtl";
 
   const newproductstitle =
     router.locale === "ar"
@@ -129,9 +129,7 @@ export default function Index({}) {
 
   return (
     <Layout dir={router.locale === "ar" ? "rtl" : "ltr"}>
-
-<NextSeo title="Tedili  | Hakkımızda | Tedili Mermer" />
-
+      <NextSeo title="Tedili  | Hakkımızda | Tedili Mermer" />
 
       <div className="scroll-smooth mb-16  ">
         {/* {sliders && sliders?.length > 0 && <BannerSlider data={sliders} />}
@@ -142,30 +140,21 @@ export default function Index({}) {
           </div>
         )} */}
 
-
-
-<Hero/>
-
-
+        <div dir="ltr">
+          <Hero direction={direction} />
+        </div>
 
         <div>
-
-{/* -----ALL PRODUCTS CONTAINER------ */}
-        <div className="py-16 sm:py-24">
-        <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
-        {products?.map((product, index) => {
+          {/* -----ALL PRODUCTS CONTAINER------ */}
+          <div className="py-16 sm:py-24">
+            <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
+              {products?.map((product, index) => {
                 return <ProductCard {...product} key={product?.id} />;
               })}
+            </div>
           </div>
-      
-</div>
 
-
-
-
-
-      
-{/* 
+          {/* 
         {offers && offers?.length > 0 && (
           <ProductSlider title={discounttitle} data={offers} />
         )}
@@ -173,11 +162,7 @@ export default function Index({}) {
         {news && news?.length > 0 && (
           <ProductSlider title={newproductstitle} data={news} />
         )} */}
-
-
-
-
-</div>
+        </div>
 
         {/* <BannerSlider/>
 

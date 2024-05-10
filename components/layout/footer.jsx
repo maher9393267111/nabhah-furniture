@@ -4,6 +4,7 @@ import {
   FaWhatsapp,
   FaInstagram,
   FaLinkedinIn,
+  FaTiktok
 } from 'react-icons/fa';
 
 const SocialButtons = () => {
@@ -17,14 +18,29 @@ const SocialButtons = () => {
     {
       name: 'Whatsapp',
       icon: <FaWhatsapp />,
-      link: 'https://wtspee.com/905379732131',
+      link: 'https://wtspee.com/905522982310',
     },
+    {
+      name: 'Whatsapp2',
+      icon: <FaWhatsapp />,
+      link: 'https://wtspee.com/905395894257',
+    },
+    {
+      name: 'Facebook',
+      icon: <FaFacebookF />,
+      link: 'https://www.facebook.com/nabhan.salo?mibextid=ZbWKwL',
+    },
+
     {
       name: 'Instagram',
       icon: <FaInstagram />,
-      link: 'https://www.instagram.com/tedili.mermer?igsh=MWJ4cnQzMzBlbjJqag==',
+      link: 'https://www.instagram.com/nabhanyaser8?igsh=MXNtbDJ2cW1kMXc1cQ==',
     },
-
+    {
+      name: 'Tiktok',
+      icon: <FaTiktok />,
+      link: 'https://www.tiktok.com/@yasernbhan1?_t=8mEokZZgEz8&_r=1',
+    },
   ];
 
   return (

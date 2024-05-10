@@ -94,7 +94,7 @@ if (!product ){
 
                 <div className="aspect-w-1 aspect-h-1 ">
                   <Image
-                    className="bg-grad rounded-xl"
+                    className="bg-grad rounded-xl !h-[500px] "
                     src={product?.images[0]}
                     alt={product?.title}
                     layout="responsive"
@@ -111,7 +111,7 @@ if (!product ){
                       className="aspect-w-1 aspect-h-1 hover:z-50"
                     >
                       <img
-                        className="rounded-xl md:!w-[288px] md:!h-[200px] border object-cover transition hover:scale-150 "
+                        className="rounded-xl h-[200px] w-full md:!w-[288px] md:!h-[200px] border object-cover transition hover:scale-150 "
                         src={image}
                       />
                     </div>

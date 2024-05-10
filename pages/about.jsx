@@ -1,14 +1,46 @@
 import { NextSeo } from "next-seo";
 import Image from "next/image";
-import React from "react";
+import React ,{useState ,useEffect} from "react";
 import Layout from "@/components/layout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
+import { getDocumentsOrder } from "@/functions/firebase/getData";
+import { orderBy } from "@firebase/firestore";
 import { useTranslation } from "react-i18next";
 import {useRouter} from 'next/router'
 function Hakkimizda() {
   const { t } = useTranslation("common");
 const router = useRouter()
+
+
+
+const [contactinfo, setContactInfo] = useState([]);
+// const [loacding, setLoading] = useState(true);
+//subcategory"
+useEffect(() => {
+
+ 
+
+  const getInfo = async () => {
+    //  setPageLoading(true)
+
+    const data = await getDocumentsOrder(
+      "slider",
+      orderBy("timeStamp", "asc"),
+      null
+    );
+
+    console.log(data, "fetch contactInfo ====>>>>");
+    setContactInfo(data);
+    // setPageLoading(false)
+  };
+
+  getInfo();
+
+}, []);
+
+
+
+
 
 
 
@@ -22,15 +54,32 @@ const router = useRouter()
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-5 py-8 md:grid-cols-2 md:py-16">
           <section className="grid gap-4 arabic">
+
+<div>
+
             <h1 dir={router?.locale === 'ar' && 'rtl'} className="text-4xl font-bold tracking-tight shimmer sm:text-5xl md:text-6xl">
               {t("navbar.about")}
+
+              
             </h1>
+
+            
+<div className="mt-6 text-xl" dir={router?.locale === 'ar' && 'rtl'} > 
+  
+  { router?.locale === 'ar' ?  contactinfo[0]?.titlear : router.locale === 'en' ? contactinfo[0]?.title : contactinfo[0]?.titletr} 
+  </div>
+
+</div>
+
             <article dir={router?.locale === 'ar' && 'rtl'} className="grid gap-2">
               <p className="arabic text-[17px] sm:text-xl">
 
 
 
-{t("aboutdescbig")}
+
+{/* {t("aboutdescbig")} */}
+
+
 
                 {/* Firmamızın ana gayesi,sektöründe yenilik ve gelişmeye açık
                 olarak dünyada ve ülkemizde gelişmeleri izleyerek, hitap ettiği
@@ -72,9 +121,9 @@ const router = useRouter()
           </section>
           <section className="shadow_image_left rounded-md relative order-first h-[355px] md:min-h-[355px] md:order-none md:h-full">
             <Image
-              className="absolute"
+              className="absolute rounded-md"
               src={
-                "/hak.jpg"
+                "/about.jpg"
               }
               alt="Hakkımızda"
               layout="fill"

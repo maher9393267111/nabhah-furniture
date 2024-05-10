@@ -112,7 +112,7 @@ const router =useRouter()
               href="https://maps.app.goo.gl/aVHAza3KnaQqYdfy6"
             >
               <strong>{t("address")}:</strong> 
-              ESKİ HAMAM MAH.ANKARA-AFYON KARAYOLU  No:7/2 İscehisar/ Afyonkarahisar
+              Zafer, Küplüpınar Cd. No:36, 16580 Gürsu/Bursa
             </a>
           </p>
         </section>
@@ -120,7 +120,7 @@ const router =useRouter()
         <div className="md:grid grid-cols-1 gap-5 py-4 md:grid-cols-2 md:py-8 flex  flex-col-reverse">
           <section className="h-64 md:h-full">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3107.6416372148756!2d30.73896208465131!3d38.84066727957938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzjCsDUwJzI2LjQiTiAzMMKwNDQnMTIuNCJF!5e0!3m2!1sar!2str!4v1715176272556!5m2!1sar!2str"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3046.6296704256233!2d29.1886!3d40.2173!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca386320f20265%3A0xa33cb1ab2d594274!2sZirve%20Z%C3%BCccaciye!5e0!3m2!1sar!2str!4v1715365255547!5m2!1sar!2str"
               width="100%"
               height="100%"
               style={{ border: 0 }}
