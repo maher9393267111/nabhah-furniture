@@ -315,7 +315,7 @@ TEDILI MERMER
                               href={`/products?category=${item?.title}`}
                               className="block arabic px-4 py-2 hover:bg-primary "
                             >
-                              {locale === 'ar' ? item?.titlear  : lang === 'en' ? item?.title    : item?.titletr}
+                              {locale === 'ar' ? item?.titlear  : locale === 'en' ? item?.title    : item?.titletr}
                             </Link>
                           </li>
                         );
