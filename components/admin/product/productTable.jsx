@@ -36,35 +36,14 @@ const ProductTable = ({ products }) => {
       // same name from database   // category={title ,....}
       dataIndex: "title",
 
-      filters: [
-        {
-          text: "Used Laptops",
-          value: "Used Laptops",
-        },
-        {
-          text: "iphone 14",
-          value: "iphone 14",
-        },
-      ],
-      filteredValue: products.name || null,
-      onFilter: (value, record) => {
-        console.log("record", record, value);
-        record.desc.includes(value);
-      },
-      sorter: (a, b) => a.name.length - b.name.length,
-      sortOrder: sortedInfo.columnKey === "name" ? sortedInfo.order : null,
-      ellipsis: true,
+
     },
     {
       title: "Category",
       // same name from database   // category={title ,....}
       dataIndex: "category",
     },
-    {
-      title: "SubCategory",
-      // same name from database   // category={title ,....}
-      dataIndex: "subcategory",
-    },
+
     
     {
       title: "Is Offer",
