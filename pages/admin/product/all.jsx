@@ -31,6 +31,8 @@ const AllProductsPage = ({}) => {
     getArticles();
   }, []);
 
+  
+
   if (pageLoading) {
     return <Loader />;
   }
