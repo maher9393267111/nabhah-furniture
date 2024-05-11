@@ -83,34 +83,69 @@ const ProductForm = ({
           }}
         >
           <div className=" grid grid-cols-1 md:grid-cols-3 gap-3">
-            <Form.Item name="title" label="English - Title">
+            <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input your title",
+              },
+            ]} name="title" label="English - Title">
               <Input />
             </Form.Item>
 
-            <Form.Item name="titlear" label="Arabic - Title">
+            <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input your arabic title",
+              },
+            ]} name="titlear" label="Arabic - Title">
               <Input />
             </Form.Item>
 
-            <Form.Item name="titletr" label="Turkish- Title">
+            <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input your turkish title",
+              },
+            ]} name="titletr" label="Turkish- Title">
               <Input />
             </Form.Item>
           </div>
 
-          <Form.Item name="desc" label="English Description">
+          <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input your desc",
+              },
+            ]} name="desc" label="English Description">
             <TextArea rows={4} />
           </Form.Item>
 
-          <Form.Item name="descar" label="Arabic Description">
+          <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input your arabic desc",
+              },
+            ]} name="descar" label="Arabic Description">
             <TextArea rows={4} />
           </Form.Item>
 
-          <Form.Item name="desctr" label="Turkish Description">
+          <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input your turkish desc",
+              },
+            ]} name="desctr" label="Turkish Description">
             <TextArea rows={4} />
           </Form.Item>
 
           <div className=" grid gap-3 md:grid-cols-3 lg:grid-cols-4 grid-cols-1">
             {/* -----category--- */}
-            <Form.Item name="category" label="category">
+            <Form.Item      rules={[
+              {
+                required: true,
+                message: "Please input category",
+              },
+            ]} name="category" label="category">
               <Select  onChange={handleCategoryChange} placeholder="Select Category">
                 {cats?.map((category) => {
                   return (
@@ -121,7 +156,7 @@ const ProductForm = ({
                 })}
               </Select>
             </Form.Item>
-sas
+
             {/* -----subcategory--- */}
 
             {/* <Form.Item name="subcategory" label="subcategory">
