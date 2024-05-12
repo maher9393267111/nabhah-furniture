@@ -14,6 +14,7 @@ import {
   FaSnapchat,
   FaTiktok
 } from "react-icons/fa";
+import { AiOutlineGlobal } from "react-icons/ai"
 import { useAuth } from "@/functions/context";
 import { getDocumentsOrder } from "@/functions/firebase/getData";
 import { orderBy } from "firebase/firestore";
@@ -70,7 +71,9 @@ const Navbar = () => {
   const { pageLoading, setPageLoading } = useAuth();
 
   const { t } = useTranslation();
-  const { locale, asPath } = useRouter();
+  
+  const { locale, asPath ,pathname ,locales } = useRouter();
+  const router =useRouter()
 
   const [cats, setCats] = useState([]);
   const [subcats, setsubCats] = useState([]);
@@ -121,6 +124,21 @@ const Navbar = () => {
   });
 
   console.log("DAS>>>", combinedData);
+
+
+  const changeLanguage = () => {
+    const currentIndex = (locales || []).indexOf(locale || "");
+    const nextIndex = (currentIndex + 1) % (locales || []).length;
+    const nextLocale = (locales || [])[nextIndex];
+
+    router.push(pathname, asPath, { locale: nextLocale });
+  }; 
+
+
+
+
+
+
 
   return (
     <div>
@@ -368,7 +386,7 @@ TEDILI MERMER
 
               {/* ... other navigation items ... */}
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <button className="languages md:mt-[-6px] cursor-pointer bg-transparent  rounded-lg py-1 px-4  text-center text-black     active:scale-110">
                   {locale == "ar" ? (
                     <div className="flex gap-2">
@@ -425,7 +443,25 @@ TEDILI MERMER
                     </div>
                   )}
                 </button>
-              </li>
+              </li> */}
+
+<li>
+
+
+
+<button
+        className="inline-flex text-xl items-center gap-1"
+        onClick={changeLanguage}
+      >
+        <AiOutlineGlobal className="text-2xl text-primary" />
+        <span className="uppercase text-primary">{locale}</span>
+      </button>
+
+
+
+</li>
+
+
             </ul>
           </div>
         </div>
