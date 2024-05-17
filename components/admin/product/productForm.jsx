@@ -22,11 +22,14 @@ const ProductForm = ({
   initialValues,
   files,
   setFiles,
+  file ,
+  setFile,
   cats,
   subcats,
   isupdate = false,
 }) => {
   const [images, setImages] = useState(initialValues?.images || []);
+  const [image, setImage] = useState(initialValues?.image || "");
 
   const [offerToggle, setOfferToggle] = useState(
     initialValues?.isoffer || false
@@ -62,6 +65,7 @@ const ProductForm = ({
             onFinish({
               ...values,
               images,
+              image
             })
           }
           initialValues={{
@@ -223,6 +227,47 @@ const ProductForm = ({
               </Form.Item>
             </div>
           ) : null}
+
+
+
+{/* ------upload single image--- */}
+
+
+<div>
+            <Upload
+              accept="image/*"
+              maxCount={1}
+              // file is data of image will be uploaded to firebase/storage
+              beforeUpload={(file) => {
+                setFile(file);
+                // setFiles((prev) => [...prev, file]);
+                return false;
+              }}
+              listType="picture-card"
+              onRemove={() => setFile("")}
+            >
+              Upload MainImage
+            </Upload>
+          </div>
+
+
+
+          {image && (
+            <div className="  w-24 md:w-24 relative">
+              <img className=" w-24 h-24  rounded-lg" src={image} alt="" />
+
+              <p
+                onClick={() => setImage("")}
+                className="  !text-red-500 cursor-pointer  font-semibold text-center"
+              >
+                Remove
+              </p>
+            </div>
+          )}
+
+
+
+
 
           {/* -----images upload----- */}
 
