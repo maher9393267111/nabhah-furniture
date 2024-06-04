@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 import  ProgressBar from '../components/common/progressBar';
 import { useEffect } from 'react';
-
+import Head from 'next/head';
 
 import { ToastContainer,toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,26 +20,30 @@ import { appWithTranslation } from "next-i18next";
 import nextI18NextConfig from "../next-i18next.config"
 
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+
+// const queryClient = new QueryClient({
+//   defaultOptions: { queries: { staleTime: Infinity } },
+// });
+
+const queryClient = new QueryClient();
 
 const MyApp=({ Component, pageProps }) =>{
 
 
-    // useEffect(() => {
-      
-    //     AOS.init({
-    //        // once: true,
-    //         // Animations always disabled in dev mode; disabled on phones in prod
-    //         disable:  "phone",
-    //         duration: 700,
-    //         easing: "ease-out-cubic",
-    //     }
-    //     );
-    //   }, [])
-  
 
 
     return (
+      <QueryClientProvider client={queryClient}>
         <>
+
+<Head>
+
+        <title>Project</title>
+      </Head>
+
+    
     <ChakraProvider>
     <Provider store={store}>
     <StateContextProvider>
@@ -51,7 +55,9 @@ const MyApp=({ Component, pageProps }) =>{
     </Provider>
     
     </ChakraProvider>
+   
     </>
+    </QueryClientProvider>
 )
 }
 

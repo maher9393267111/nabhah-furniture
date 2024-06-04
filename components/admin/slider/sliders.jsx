@@ -1,5 +1,5 @@
 import React from 'react';
-import AdminLayout from '../AdminLayout';
+import AdminLayout from '../Layout';
 import SubCategoryTable from './sliderTable';
 
 const SlidersMain = ({subcats}) => {

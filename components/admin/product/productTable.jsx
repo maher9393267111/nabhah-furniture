@@ -1,61 +1,78 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Table, Space, Button } from "antd";
 import Link from "next/link";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { FaVideo } from "react-icons/fa6";
 import { FaVideoSlash } from "react-icons/fa";
-import { handleDelete } from "@/functions/firebase/getData";
+import { handleDelete ,getDocumentsOrder ,getCount } from "@/functions/firebase/getData";
 import Image from "next/image";
 
+import { limit, orderBy, query } from "firebase/firestore";
+import { collection, getDocs, startAfter } from "firebase/firestore";
+import db from "@/functions/firebase/index";
+import Loader from "@/components/common/Loader";
+
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+
+
+
+
 const ProductTable = ({ products }) => {
-  const [filteredInfo, setFilteredInfo] = useState({});
-  const [sortedInfo, setSortedInfo] = useState({});
-  const handleChange = (pagination, filters, sorter) => {
-    console.log("Various parameters", pagination, filters, sorter);
-    setFilteredInfo(filters);
-    setSortedInfo(sorter);
-  };
-  const clearFilters = () => {
-    setFilteredInfo({});
-  };
-  const clearAll = () => {
-    setFilteredInfo({});
-    setSortedInfo({});
-  };
-  const setAgeSort = () => {
-    setSortedInfo({
-      order: "descend",
-      columnKey: "age",
-    });
-  };
+
+  const [page, setPage] = useState(null);
+  const [lastDoc, setLastDoc] = useState(1);
+  const { isPending, isSuccess, isFetching, isError, error, data } = useQuery({
+    queryKey: [`product-page`],
+    queryFn: () => getDocumentsOrder(
+            "products",
+            orderBy("timeStamp", "asc"), null 
+           ),
+    //staleTime: 80000000,
+    placeholderData: keepPreviousData,
+    refetchOnWindowFocus: true,
+  });
+
+
+//   const { isFetching, isError, data, error } = useQuery({
+//     queryKey: ['projects'],
+//     queryFn: () => {
+//         return getDocs(collection(db, 'products'))
+//             .then((snapshot) => snapshot.docs.map(doc => ({...doc.data(), id: doc.id})))
+//     }
+// })
+
+
+
+  useEffect(() => {
+    if (data) setLastDoc(data.lastDocRef);
+  }, [isFetching]);
+
+   if (isPending) return <Loader />;
+
+console.log("ADATA-->" , isPending)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   const columns = [
     {
       title: "Products",
       // same name from database   // category={title ,....}
       dataIndex: "title",
-
-
     },
-    {
-      title: "Category",
-      // same name from database   // category={title ,....}
-      dataIndex: "category",
-    },
-
-    
-    {
-      title: "Is Offer",
-      // same name from database   // category={title ,....}
-      render: (record) => {
-        return (
-          <div>
-          {record.isoffer ? <h1 className=" text-green-500"> True</h1> : <h1 className=" text-red-500"> False</h1> }
-          </div>
-          )
-    }},
-
 
     {
       title: "Image",
@@ -77,11 +94,9 @@ const ProductTable = ({ products }) => {
               width={50}
               height={50}
               className="  relative  w-24 h-24 object-cover object-center rounded-full"
-              src={record.images[0]}
+              src={record.image}
               alt=""
             />
-
-
           </div>
         );
       },
@@ -112,8 +127,6 @@ const ProductTable = ({ products }) => {
                   />
                 </Link>
               </div>
-
-         
             </div>
           </>
         );
@@ -123,17 +136,29 @@ const ProductTable = ({ products }) => {
 
   return (
     <div className=" w-[90%]  md:w-[70%] mx-auto">
+   sas {data?.length}
       <Space
         style={{
           marginBottom: 16,
         }}
-      >
-        <Button onClick={setAgeSort}>Sort age</Button>
-                 <Button onClick={clearFilters}>Clear filters</Button>
-                 <Button onClick={clearAll}>Clear filters and sorters</Button>
-              
-      </Space>
-      <Table onChange={handleChange} columns={columns} dataSource={products} />
+      ></Space>
+      <Table
+       columns={columns}
+       dataSource={data}
+      
+       pagination={{
+        //  total: total,
+          pageSize: 4,
+        //  current: currentPage,
+        //  onChange: handleChange,
+          showSizeChanger: false,
+       }}
+  
+
+      />
+
+
+
     </div>
   );
 };
