@@ -1,5 +1,5 @@
 import React from 'react';
-import AdminLayout from '../Layout';
+import AdminLayout from '../AdminLayout';
 import ProductTable from './productTable';
 const ProductsMain = ({products}) => {
     return (
